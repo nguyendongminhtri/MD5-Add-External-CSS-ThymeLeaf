@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1 class="add_customer">Add Customer</h1>
+<span style="color: crimson" th:if="${errorMessenger}" th:utext="${errorMessenger}"></span><br><br>
+<form action="/create/customer" method="post" th:object="${customerForm}">
+    <label>Name: </label>
+    <input type="text" th:field="*{name}">
+    <label>Email:</label>
+    <input type="text" th:field="*{email}">
+    <label>Address:</label>
+    <input type="text" th:field="*{adress}">
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>
